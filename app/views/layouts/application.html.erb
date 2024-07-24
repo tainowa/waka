@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap" rel="stylesheet">
+    <title>Waka</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <body>
+
+ <header>
+  <div class="header-list">
+    <p>yokuwaka</p>
+    <ul>
+      <% if user_signed_in? %>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+    
+      <li><%= link_to "新規登録", new_user_registration_path %></li>
+      <li><%= link_to "ログイン", new_user_session_path %></li>
+      <% end %>
+       <li><%= link_to "トップページ", tweets_top_path %></li>
+      <li><%= link_to '説明', tweets_about_path %></li>
+      
+<li><%= link_to "おすすめの和歌診断", tweets_path %></li>
+
+<li><%= link_to "お気に入りの和歌投稿", new_toukou_path %></li>
+<li><%= link_to "投稿一覧", toukous_path %></li>
+    </ul>
+    </div>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+    
+ </main>
+</body>

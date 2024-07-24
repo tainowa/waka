@@ -1,0 +1,66 @@
+<div class="osusumeha">
+<h1>あなたにおすすめの和歌は…</h1>
+</div> 
+
+
+
+ 
+   <div class="kisetsu1">
+  
+    <% @results_kisetsu.order("RANDOM()").limit(2).each do |tweet| %>
+    <div class="kisetsu2">
+
+    <div class="genbun">
+      <h4>和歌</h4>
+      <p><%= tweet.waka %></p><br>
+     <h4>現代語訳</h4>
+           <p> <%= tweet.gendai %></p><br>
+           <h4>作者</h4>
+              <p><%= tweet.sakusya %></p><br>
+                <h4>季節</h4>
+        <p><%= tweet.kisetsu %></p><br>
+       <p><%= tweet.ganbaru %></p>
+</div> 
+
+<div class="picture">
+        <% if tweet.photo.attached? %>
+       <%= image_tag tweet.photo, size: '250x270' ,
+         style: "object-fit: contain" %>
+         <% end %>
+         </div>
+     </div>
+    <% end %>
+    
+</div>
+
+
+ <div class="ganbaru1">
+  
+ 
+    <% @results_ganbaru.order("RANDOM()").limit(2).each do |tweet| %>
+      <div class="ganbaru2">
+        <div class="genbun">
+      <h4>和歌</h4>
+           <p><%= tweet.waka %></p><br>
+          <h4>現代語訳</h4>
+             <p> <%= tweet.gendai %></p><br>
+            <h4>作者</h4>
+               <p><%= tweet.sakusya %></p><br>
+        <%= tweet.kisetsu %>
+         <h4>頑張りたいこと</h4>
+        <p><%= tweet.ganbaru %></p><br>
+        </div>
+
+        <% if tweet.photo.attached? %>
+    <%= image_tag tweet.photo, size: '250x270',
+         style: "object-fit: contain" %>
+         <% end %>
+     </div>
+    <% end %>
+    
+    </div>
+
+  
+
+<div class="modoru">
+<%= link_to '診断へ戻る', tweets_path %></div>

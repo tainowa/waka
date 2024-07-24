@@ -1,0 +1,46 @@
+<div class="wakaha">
+<h1 style="text-align: center;">あなたのお気に入りの和歌は？</h1>
+</div>
+<%= form_for @toukou do |f| %>
+<%= stylesheet_link_tag 'new', :media => "all" %>
+
+
+<div class="toukouran">
+<div class="post-container">
+  <table class="title">
+  <tr>
+    <td>
+    <%= f.label :title, "お気に入りの和歌" %>
+    </td>
+    <td>
+    <%= f.text_field :title, :size => "50x5" %>
+    </td>
+  </tr>
+</table>
+<br><br>
+   
+  <table class="body">
+  <tr>
+    <td>
+    <%= f.label :body, "選んだ理由は？" %>
+    </td>
+    <td>
+    <%= f.text_field :body, :size => "50x5" %>
+    </td>
+  </tr>
+</table>
+    
+</div>
+<br>
+<br>
+<br>
+<br><br><br>
+  <%= f.submit "投稿する" , class: "btn-flat-dashed-border" %>
+
+  </div>
+<% end %>
+
+
+  <%= image_tag '朝焼け.jpg' ,size: '1400x900', class: "syasin" %>
+ 
+<br>

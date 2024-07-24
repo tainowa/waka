@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag 'ichiran', :media => "all" %>
+<div class="wakaichiran">
+<h1 style="text-align: center;">みんなのお気に入りの和歌一覧</h1>
+</div>
+<% if user_signed_in? %>
+
+<div class="link">
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+  </div>
+<% end %>
+<br>
+<br>
+<div class="toukous-container">
+  <% @toukous.each do |t| %>
+    <div class="toukou">
+      <p>
+      <%= t.user.name %><br>
+      <%= t.user.email %><br>
+      <%= t.user.profile %>
+</p><br>
+<p>
+  <h4>お気に入りの和歌</h4>
+     <p> <%= t.title %></p><br>
+     <h4>選んだ理由</h4>
+      <p> <%= t.body %></p>
+      
+      </P>
+      <br><%= link_to "詳細へ", toukou_path(t.id) %> 
+
+    </div> 
+  <% end %>
+ </div> 
+  
+<div class="ichiransyasin">
+  <%= image_tag 'asahi.jpg', size: '310x270'%> 
+   <%= image_tag 'momiji.jpg' , size: '310x270'%>
+    <%= image_tag 'nanohana.jpg', size: '310x270' %>
+     <%= image_tag '朝焼け.jpg', size: '310x270' %>
+     </div>

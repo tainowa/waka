@@ -1,0 +1,22 @@
+<%= form_for @toukou do |f| %>
+<div class="fieldwaka">
+
+  <%= f.label :お気に入りの和歌 %>
+  <%= f.text_field :title, :size => "50x5" %>
+  </div>
+
+  <div class="fieldriyuu">
+  <%= f.label :選んだ理由 %>
+  <%= f.text_field :body, :size => "50x5" %>  
+   </div>
+
+<div class="field3">
+  <%= f.submit "編集する" , class: "btn-flat-dashed-border1"%>
+<% end %>
+</div>
+
+
+<div class="field4">
+<%= link_to "投稿一覧に戻る", toukous_path %>
+</div>
+<%= image_tag '朝焼け.jpg' ,size: '1400x900', class: "syasin5" %>

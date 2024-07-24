@@ -1,0 +1,58 @@
+
+ <div class="taitoru">
+
+<h1>TOP</h1>
+</div>
+  <br>  <br>  <br>  <br>
+ <div class="kanajyo">
+    <div class="toumei">
+        <br>
+         <br>
+          <br>
+        <h2 style="line-height: 65px;">やまとうたは、人の心を種として、万の言の葉とぞなれりける。</h2>
+        <h2 style="line-height: 65px;">世の中にある人、ことわざ繁きものなれば、</h2>
+        <h2 style="line-height: 65px;">心に思ふことを、見るもの聞くものにつけて、言ひ出せるなり。</h2>
+        <br>
+         <h3>やまとうたというものは、人の心を種として、無数の言の葉となったものである。</h3> <br>
+     <h3>この世に生きる人々は、様々な事柄に関わり合っているため、</h3> <br>
+     <h3>心に思うことを、見ることや聞くことに託して表現したものが歌である。</h3>
+      <br>
+     <h3>（『古今和歌集』仮名序）</h3>
+    </div>
+</div>
+
+  <br>  <br>  <br>  <br>
+ <div class="kyouno">
+<div class="daimei">
+<h2>今日の一首</h2>
+</div>
+<div class="nakami">
+
+
+<tbody>
+ </tr>   
+
+<% @random.limit(1).each do |tweet| %>
+
+
+ <h3>和歌</h3>
+ <P><%= tweet.waka %></p>
+   <br>
+ <h3>現代語訳</h3>
+<p><%= tweet.gendai %></p>
+<br>
+<h3>作者</h3>
+ <p><%= tweet.sakusya %></p>
+   
+ <div class="field">
+<% if tweet.photo.attached? %>
+<td><%= image_tag tweet.photo, size: '250x270' ,
+style: "object-fit: contain" %></td>
+</div>
+<% end %>
+</tr>
+</tbody>
+<% end %>
+</div>
+</div>
+

@@ -1,0 +1,2 @@
+module ToukousHelper
+end

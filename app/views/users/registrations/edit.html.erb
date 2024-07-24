@@ -1,0 +1,59 @@
+  <div class="field7">
+<h2>ユーザー編集ページ </h2>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+<div class="f">
+<div class="field6">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", :size => "80x2" %>
+  </div>
+  
+<div class="field6">
+    <%= f.label :プロフィール %><br />
+    <%= f.text_area :profile, autofocus: true, :size => "80x2" %>
+  </div>
+
+  <div class="field6">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :size => "80x2" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field6">
+    <%= f.label :パスワード %> <i>(もし変更しないなら空白のままで構いません)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", :size => "80x2" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em>（最低<%= @minimum_password_length %>字）</em>
+    <% end %>
+  </div>
+
+  <div class="field6">
+    <%= f.label :パスワードの確認 %><br />
+    <%= f.password_field :password_confirmationパスワードの確認, autocomplete: "new-password" , :size => "80x2"%>
+  </div>
+
+  <div class="field6">
+    <%= f.label :現在のパスワード %> <i>(変更を承認するためもう一度現在のパスワードを入力してください)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" , :size => "80x2"%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新する" %>
+<% end %>
+ </div> 
+ </div>
+ <div class="kesu">
+<h3>アカウントを消す</h3>
+ <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+ </div>
+
+
+ <div class="modoru3">
+<%= link_to "戻る", :back %>
+</div>

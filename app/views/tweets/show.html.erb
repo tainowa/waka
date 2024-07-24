@@ -1,0 +1,16 @@
+<h1>おすすめの和歌診断</h1>
+<h3>和歌の詳細</h3>
+<div class="tweet">
+  <p><%= @tweet.waka %></p>
+   <p><%= @tweet.gendai %></p>
+    <p><%= @tweet.sakusya %></p>
+
+ <% if @tweet.photo.attached? %>  
+<p><%= image_tag @tweet.photo, size: '250x270'%></p>
+ <% end %>
+</div>
+
+<%= link_to '後で消す　一覧へ', tweets_ichiran_path %>
+
+<%= link_to "編集する", edit_tweet_path(@tweet.id) %>
+<%= link_to "和歌投稿ページへ", new_toukou_path %>

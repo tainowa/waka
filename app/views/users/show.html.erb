@@ -1,0 +1,40 @@
+
+<div class="zentai">
+  <div class="n">
+<div class="my">
+
+<h2>マイページ</h2>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+<br>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
+
+
+
+<h2>あなたが投稿した和歌一覧</h2>
+</div>
+<% @user.toukous.each do |t| %>
+<div class="mypage">
+    <p>
+   <p><%= t.user.name %></p><br>
+   
+     <h4>お気に入りの和歌</h4>
+    <p><%= t.title %></p>
+    </p><br>
+    <p>
+       <h4>選んだ理由</h4>
+   <p><%= t.body %></p><br>
+   <p><%= link_to "編集する", edit_toukou_path(t.id) %></p><br>
+     <p><%= link_to "削除する", toukou_path(t.id), method: :delete %> </p>
+     </p></div>
+<% end %>
+
+
+<div class="link1">
+<%= link_to "ユーザー投稿一覧に戻る", toukous_path %>
+</div>
+ </div>
+</div>

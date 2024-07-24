@@ -1,0 +1,35 @@
+
+<h2 style="text-align: center;">あなたにおすすめする和歌診断</h2>
+<br>
+<%= search_form_for @q, url: search_tweets_path do |f| %>
+<div class="shindan">
+  <div class="field" style="text-align: center;"><%= f.label :kisetsu_cont, '好きな季節は？' %></div>
+ <div class="botan">
+  <%= f.radio_button  :kisetsu_cont,'春' %>春
+  <%= f.radio_button :kisetsu_cont,'夏' %>夏
+   <%= f.radio_button :kisetsu_cont,'秋' %>秋
+   <%= f.radio_button :kisetsu_cont,'冬' %>冬
+   </div>
+<br>
+<br>
+<br>
+   <div class="field" style="text-align: center;"><%= f.label :ganbaru_cont, '一番頑張りたいことは？' %></div>
+ <div class="botan">
+ <%= f.radio_button :ganbaru_cont,'仕事' %>仕事
+    <%= f.radio_button :ganbaru_cont,'恋愛' %>恋愛
+      <%= f.radio_button :ganbaru_cont,'友情' %>友情
+        <%= f.radio_button :ganbaru_cont,'長生き' %>長生き
+        </div>
+        </div>
+  <br>
+  <br><br> <br>
+
+ 
+  
+  <div class="kekka">
+ <%= f.submit '結果を見る' , class: "btn-flat-dashed-border"  %>
+ </div>
+  
+  <%= image_tag '赤金魚左向き.png' , size: '300x300', class: "syasin2" %>
+  <%= image_tag '赤金魚右向き.png' , size: '330x320', class: "syasin3" %>
+<% end %>

@@ -1,0 +1,28 @@
+<h1>おすすめの和歌診断</h1>
+<h3>新規の和歌</h3>
+<%= form_for @tweet do |f| %>
+  <div class="field">
+     <%= f.label :photo %>
+     <p><%= f.file_field :photo %></p>
+     </div>
+    <%= f.label :waka %>
+    <%= f.text_field :waka, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :gendai %>
+    <%= f.text_field :gendai, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :sakusya %>
+    <%= f.text_field :sakusya, :size => 140 %>
+  </div>
+   <div class="field">
+<%= f.radio_button :kisetsu, "春" %>春 <%= f.radio_button :kisetsu, "夏" %>夏<%= f.radio_button :kisetsu, "秋" %>秋<%= f.radio_button :kisetsu, "冬" %>冬
+</div>
+<div class="field">
+<%= f.radio_button :ganbaru, "仕事" %>仕事 <%= f.radio_button :ganbaru, "恋愛" %>恋愛<%= f.radio_button :ganbaru, "友情" %>友情<%= f.radio_button :ganbaru, "長生き" %>長生き
+</div>>
+  <%= f.submit "投稿する" %>
+<% end %>
+<%= link_to "投稿一覧に戻る", tweets_path %>
+<%= link_to "和歌本文　けす", tweets_new_path %>

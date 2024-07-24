@@ -1,0 +1,14 @@
+<div class="syousai">
+<h1 style="text-align: center;">あなたのお気に入りの和歌は？</h1>
+</div>
+<div class="toukou">
+   <h4>お気に入りの和歌</h4>
+  <p><%= @toukou.title %></p><br>
+   <h4>選んだ理由</h4>
+  <p><%= @toukou.body %></p><br>
+  <p><%= @toukou.created_at %></p>
+</div>
+<div class="t">
+<%= link_to "投稿一覧に戻る", toukous_path %>
+</div>
+<%= image_tag 'チューリップ.png' , size: '220x220', class: "syasin20" %>

@@ -1,0 +1,25 @@
+<%= form_for @tweet do |f| %>
+  <div class="field">
+    <%= f.label :waka %>
+    <%= f.text_field :waka, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :gendai %>
+    <%= f.text_field :gendai, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :sakusya %>
+    <%= f.text_field :sakusya, :size => 140 %>
+  </div>
+   <div class="field">
+<%= f.radio_button :kisetsu, "春" %>春 <%= f.radio_button :kisetsu, "夏" %>夏<%= f.radio_button :kisetsu, "秋" %>秋<%= f.radio_button :kisetsu, "冬" %>冬
+</div>
+<div class="field">
+<%= f.radio_button :ganbaru, "仕事" %>仕事 <%= f.radio_button :ganbaru, "恋愛" %>恋愛<%= f.radio_button :ganbaru, "友情" %>友情<%= f.radio_button :ganbaru, "長生き" %>長生き
+</div>
+   <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+  <%= f.submit "編集する" %>
+<% end %>

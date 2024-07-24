@@ -1,0 +1,16 @@
+<h1>今日の一首</h1>
+
+
+<tbody>
+ </tr>   
+<% @random = Tweet.order("RANDOM()").limit(1).each do |tweet| %>
+ <td><%= tweet.waka %></td>
+<td><%= tweet.gendai %></td>
+ <td><%= tweet.sakusya %></td>
+<% if tweet.photo.attached? %>
+<td><%= image_tag tweet.photo, size: '250x270'%></td>
+
+<% end %>
+</tr>
+</tbody>
+<% end %>
